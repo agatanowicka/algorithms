@@ -1,22 +1,15 @@
 function isPallindrome(text) {
     if (text.length === 1) {
-        return text;
+        return true;
     }
-    if(text.length%2===0 && text.length===2){
-        return text;
+    if(text.length === 0) {
+        return true;
     }
-
     let firstCharacter = text[0];
     let lastCharacter = text[text.length - 1];
     let box = text.substring(1, text.length - 1);
-    let isPallindromeBoolean = true;
-    let isPallindromeFunction = isPallindrome(box);
-    if (firstCharacter === lastCharacter && isPallindromeFunction) {
-        isPallindromeBoolean = true;
-    } else {
-        isPallindromeBoolean = false;
-    }
-    return isPallindromeBoolean;
+    
+    return firstCharacter === lastCharacter && isPallindrome(box);
 
 }
 
