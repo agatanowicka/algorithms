@@ -1,6 +1,6 @@
 function myQuickSort(array, start, end){
 let pivot = array[start];
-let valueSmallIndex = start+1;
+let   = start+1;
 if(end - start <= 1){
     return array;
 }

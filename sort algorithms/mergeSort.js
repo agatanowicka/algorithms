@@ -23,15 +23,16 @@ function merge(array1, array2) {
 }
 
 function mergeSort(array) {
-    let middeleIndex = Math.floor(array.length / 2);
-    let array1 = array.slice(middeleIndex);
-    let array2 = array.slice(0, middeleIndex);
     if (array.length <= 1) {
         return array;
     }
-    let returnArray1 = mergeSort(array1)
-    let returnArray2 = mergeSort(array2);
-    return merge(returnArray1, returnArray2);
+    let middleIndex = Math.floor(array.length / 2);
+    let leftArray = array.slice(middleIndex);
+    let rightArray = array.slice(0, middleIndex);
+    
+    let sortedLeftArray = mergeSort(leftArray)
+    let sortedRightArray = mergeSort(rightArray);
+    return merge(sortedLeftArray, sortedRightArray);
 }
 
 console.log(mergeSort([50, 12, 41, 37,100,25,11,3,48]));
